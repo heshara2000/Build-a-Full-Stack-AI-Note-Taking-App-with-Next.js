@@ -1,5 +1,4 @@
-//import ".../styles/globals.css";
-import Header from "@/components/Header";
+import Header from "../../components/Header";
 import "../../styles/globals.css";
 import { ThemeProvider } from "./providers/ThemeProvider";
 import { Toaster } from "sonner";

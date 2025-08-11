@@ -1,9 +1,11 @@
+import LogOutButton from "./LogOutButton"; // adjust relative path accordingly
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { shadow } from "../styles/utils"; 
-import { Button } from "@/components/ui/button"
-import DarkModeToggle from "@/components/DarkModeToggle";
+import { Button } from "./ui/button";
+import DarkModeToggle from "./DarkModeToggle";
+//import DarkModeToggle from "@/components/DarkModeToggle";
 
 
 function Header() {
