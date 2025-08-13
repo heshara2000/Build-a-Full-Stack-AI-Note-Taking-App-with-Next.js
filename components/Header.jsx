@@ -5,11 +5,12 @@ import Link from "next/link";
 import { shadow } from "../styles/utils"; 
 import { Button } from "./ui/button";
 import DarkModeToggle from "./DarkModeToggle";
+import { getUser } from "@/auth/server";
 //import DarkModeToggle from "@/components/DarkModeToggle";
 
 
-function Header() {
-    const user = null;
+async function Header() {
+    const user = await getUser();
     return (
         <header 
             className="bg-popover relative flex h-24 w-full items-center justify-between px-3 sm:px-8"
