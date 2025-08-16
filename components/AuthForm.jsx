@@ -1,8 +1,8 @@
 "use client"
 
-//import { Label } from "@/components/ui/label"
+//import { Label } from "@/components/ui/label";
 
-import { useToast } from "@/hooks/use-toast";
+//import { useToast } from "@/hooks/use-toast";
 import { useRouter } from "next/navigation";
 import { CardContent, CardFooter } from "./ui/card";
 import { Label } from "./ui/label";
@@ -20,7 +20,7 @@ function AuthForm({ type }) {
   const isLoginForm = type === "login";
 
   const router = useRouter();
-  const { toast } = useToast();
+  //const { toast } = useToast();
 
   const [isPending, startTransition] = useTransition();
 

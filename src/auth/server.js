@@ -29,16 +29,29 @@ export async function createClient() {
   return client;
 }
 
+// export async function getUser() {
+//   const client = await createClient();
+//   const { auth } = client;
+
+//   const userObject = await auth.getUser();
+
+//   if (userObject.error) {
+//     console.error(userObject.error);
+//     return null;
+//   }
+
+//   return userObject.data.user;
+// }
+// server.js
 export async function getUser() {
   const client = await createClient();
   const { auth } = client;
 
-  const userObject = await auth.getUser();
-
-  if (userObject.error) {
-    console.error(userObject.error);
+  try {
+    const userObject = await auth.getUser();
+    return userObject.data.user || null;
+  } catch (error) {
+    console.warn("No active session:", error.message);
     return null;
   }
-
-  return userObject.data.user;
 }
