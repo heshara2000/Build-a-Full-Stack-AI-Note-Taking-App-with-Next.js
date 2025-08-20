@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning={true}>
       <body>
         <ThemeProvider
             attribute="class"
@@ -25,7 +25,8 @@ export default function RootLayout({ children }) {
               </main>
             </div>
 
-            <Toaster />
+            <Toaster position="top-right" richColors />
+
         </ThemeProvider>
       </body>
     </html>

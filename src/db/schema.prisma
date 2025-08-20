@@ -17,9 +17,10 @@ model Note {
 }
 
 model User {
-  id    String         @id @default(uuid())
-  email String         @unique
-  notes Note[]
-  createdAt DateTime   @default(now())
-  updatedAt DateTime   @updatedAt @default(now())
+  id          String   @id @default(uuid())
+  email       String   @unique
+  supabaseId  String   @unique   // store Supabase user ID
+  notes       Note[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt @default(now())
 }
