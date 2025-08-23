@@ -1,5 +1,6 @@
 "use client";
 
+
 import { useSearchParams } from "next/navigation";
 import { Textarea } from "./ui/textarea";
 import { ChangeEvent, useEffect } from "react";
@@ -11,6 +12,7 @@ import { updateNoteAction } from "@/actions/notes";
  * @property {string} noteId
  * @property {string} startingNoteText
  */
+
 
 let updateTimeout;  
 

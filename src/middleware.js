@@ -62,7 +62,7 @@ export async function updateSession(request) {
         const url = request.nextUrl.clone();
         url.searchParams.set("noteId", newestNoteId);
         return NextResponse.redirect(url);
-      } else {
+      } else {  //if not create a new one
         const { noteId } = await fetch(
           `${process.env.NEXT_PUBLIC_BASE_URL}/api/create-new-note?userId=${user.id}`,
           {

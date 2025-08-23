@@ -21,10 +21,25 @@ function NewNoteButton({ user }) {
       router.push("/login");
     } else {
       setLoading(true);
+      const savingToast = toast({
+        title: "Saving Current Note",
+        description: "Saving your current note before saving the new note",
+        variant: "default",
+      });
+
+      await new Promise((resolve) => 
+        setTimeout(resolve, 500));
 
       const uuid = uuidv4();
       await createNoteAction(uuid);
       router.push(`/?noteId=${uuid}&toastType=newNote`);
+
+      savingToast.dismiss();
+      toast({
+        title: "New Note Created",
+        description: "Your new note has been created.",
+        variant: "success",
+      });
 
       setLoading(false);
     }
